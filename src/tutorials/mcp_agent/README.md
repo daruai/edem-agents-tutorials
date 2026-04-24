@@ -32,11 +32,29 @@ export MODEL_PROVIDER=groq
 export GROQ_API_KEY="your-groq-api-key"
 ```
 
+### Option C: Vertex AI
+
+One-time auth on your machine:
+
+```bash
+gcloud auth application-default login
+```
+
+Then configure the provider:
+
+```bash
+export MODEL_PROVIDER=vertex
+export GOOGLE_CLOUD_PROJECT="your-gcp-project-id"
+export GOOGLE_CLOUD_LOCATION="global"
+# optional
+export VERTEX_MODEL="gemini-2.5-flash-lite"
+```
+
 ## Step 1: Define the MCP tools
 
 The MCP tool server is in:
 
-- `tutorials/mcp_agent/notes_server.py`
+- `src/tutorials/mcp_agent/notes_server.py`
 
 It exposes three tools:
 
@@ -49,7 +67,7 @@ It exposes three tools:
 Start the MCP server in its own terminal:
 
 ```bash
-uv run python tutorials/mcp_agent/notes_server.py
+uv run python src/tutorials/mcp_agent/notes_server.py
 ```
 
 This server listens on `http://127.0.0.1:9001/sse`.
@@ -59,7 +77,7 @@ This server listens on `http://127.0.0.1:9001/sse`.
 In another terminal (while server is running):
 
 ```bash
-uv run python tutorials/mcp_agent/run_standalone_client.py
+uv run python src/tutorials/mcp_agent/run_standalone_client.py
 ```
 
 You should see:
@@ -75,7 +93,7 @@ Keep the MCP server terminal running, then in a new terminal run ADK:
 
 ```bash
 export MCP_SERVER_URL="http://127.0.0.1:9001/sse"
-uv run adk web tutorials/mcp_agent
+uv run adk web src/tutorials/mcp_agent
 ```
 
 Open [http://localhost:8000](http://localhost:8000), pick **filesystem**, and try:
@@ -88,4 +106,4 @@ If your server runs on a different host/port, set `MCP_SERVER_URL` to that URL.
 
 Cleaning up:
 lsof -nP -iTCP:9001 -sTCP:LISTEN
-kill <PID>
+`kill <PID>`

@@ -27,10 +27,28 @@ export MODEL_PROVIDER=groq
 export GROQ_API_KEY="your-groq-api-key"
 ```
 
+### Option C: Vertex AI
+
+One-time auth on your machine:
+
+```bash
+gcloud auth application-default login
+```
+
+Then configure the provider:
+
+```bash
+export MODEL_PROVIDER=vertex
+export GOOGLE_CLOUD_PROJECT="your-gcp-project-id"
+export GOOGLE_CLOUD_LOCATION="global"
+# optional
+export VERTEX_MODEL="gemini-2.5-flash-lite"
+```
+
 ## Run
 
 ```bash
-uv run adk web tutorials/multi_agent
+uv run adk web src/tutorials/multi_agent
 ```
 
 Open http://localhost:8000, pick **supervisor**, and try:

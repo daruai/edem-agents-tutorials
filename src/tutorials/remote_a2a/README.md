@@ -27,19 +27,37 @@ export GROQ_API_KEY="your-groq-api-key"
 
 Uses `groq/qwen/qwen3-32b` by default. Override with `export GROQ_MODEL="groq/llama-3.3-70b-versatile"`.
 
+### Option C: Vertex AI
+
+One-time auth on your machine:
+
+```bash
+gcloud auth application-default login
+```
+
+Then configure the provider:
+
+```bash
+export MODEL_PROVIDER=vertex
+export GOOGLE_CLOUD_PROJECT="your-gcp-project-id"
+export GOOGLE_CLOUD_LOCATION="global"
+# optional
+export VERTEX_MODEL="gemini-2.5-flash-lite"
+```
+
 ## Run
 
 Start all three agents, then the UI:
 
 ```bash
-export PYTHONPATH=tutorials
+export PYTHONPATH=src
 uv run uvicorn tutorials.remote_a2a.roll_die.agent:a2a_app --host localhost --port 8001 & \
 uv run uvicorn tutorials.remote_a2a.stats.agent:a2a_app --host localhost --port 8002 & \
 uv run uvicorn tutorials.remote_a2a.supervisor.agent:a2a_app --host localhost --port 8003 &
 ```
 
 ```bash
-uv run adk web tutorials/remote_a2a
+uv run adk web src/tutorials/remote_a2a
 ```
 
 Open http://localhost:8000, pick **supervisor**, then try: **"Roll a 6-sided die 5 times and give me the stats"**.
