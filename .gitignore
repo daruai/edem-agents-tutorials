@@ -29,3 +29,4 @@ build/
 *.adk
 
 .deepeval/
+**/sandbox/*

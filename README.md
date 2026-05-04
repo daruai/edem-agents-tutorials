@@ -99,6 +99,10 @@ uv sync --extra adk --extra eval
 uv run pytest src/tutorials/evaluations/ -v
 ```
 
+### 7. Deploy ADK Agent to GCP
+
+Deploy a self-contained dice agent to Cloud Run and Vertex AI Agent Engine using `adk deploy`. See `src/tutorials/deploy_gcp/README.md`.
+
 ## Notebooks
 
 Install notebook dependencies and start Jupyter:
@@ -107,3 +111,5 @@ Install notebook dependencies and start Jupyter:
 uv sync --extra notebooks
 uv run jupyter notebook notebooks/
 ```
+
+- `notebooks/deploy_gcp_clients.ipynb`: call the deployed GCP agent from Cloud Run and Agent Engine.
