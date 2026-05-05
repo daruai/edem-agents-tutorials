@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 from google.adk.runners import InMemoryRunner
 from google.genai import types
 
-import tutorials.multi_agent.supervisor.agent as _supervisor_module
+import tutorials.t04_multi_agent.supervisor.agent as _supervisor_module
 
 _APP_NAME = "evaluations"
 

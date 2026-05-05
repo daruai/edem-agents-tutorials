@@ -48,7 +48,7 @@ export VERTEX_MODEL="gemini-2.5-flash-lite"
 ## Run
 
 ```bash
-uv run adk web src/tutorials/multi_agent
+uv run adk web src/tutorials/t04_multi_agent
 ```
 
 Open http://localhost:8000, pick **supervisor**, and try:

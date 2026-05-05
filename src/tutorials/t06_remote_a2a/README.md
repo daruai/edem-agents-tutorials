@@ -51,13 +51,13 @@ Start all three agents, then the UI:
 
 ```bash
 export PYTHONPATH=src
-uv run uvicorn tutorials.remote_a2a.roll_die.agent:a2a_app --host localhost --port 8001 & \
-uv run uvicorn tutorials.remote_a2a.stats.agent:a2a_app --host localhost --port 8002 & \
-uv run uvicorn tutorials.remote_a2a.supervisor.agent:a2a_app --host localhost --port 8003 &
+uv run uvicorn tutorials.t06_remote_a2a.roll_die.agent:a2a_app --host localhost --port 8001 & \
+uv run uvicorn tutorials.t06_remote_a2a.stats.agent:a2a_app --host localhost --port 8002 & \
+uv run uvicorn tutorials.t06_remote_a2a.supervisor.agent:a2a_app --host localhost --port 8003 &
 ```
 
 ```bash
-uv run adk web src/tutorials/remote_a2a
+uv run adk web src/tutorials/t06_remote_a2a
 ```
 
 Open http://localhost:8000, pick **supervisor**, then try: **"Roll a 6-sided die 5 times and give me the stats"**.

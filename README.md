@@ -68,40 +68,44 @@ export VERTEX_MODEL="gemini-2.5-flash-lite"
 
 ## Tutorials
 
-### 1. Basic ADK Agent
+### 1. Tutorial Agent
 
-A single agent with one Python function tool (dice rolling). See `src/tutorials/basic_agent/README.md`.
+A minimal starter agent with one mock time tool. See `src/tutorials/t01_tutorial_agent/README.md`.
 
-### 2. Multi-Agent (Local)
+### 2. Basic ADK Agent
 
-A supervisor agent orchestrating two local sub-agents (dice roller + stats calculator) using `AgentTool`. See `src/tutorials/multi_agent/README.md`.
+A single agent with one Python function tool (dice rolling). See `src/tutorials/t02_basic_agent/README.md`.
 
-### 3. ADK Agent with MCP Tool
+### 3. Sequential Workflow Agent
 
-A step-by-step MCP tutorial: run a separate notes MCP server and connect to it from both a standalone client and an ADK agent. See `src/tutorials/mcp_agent/README.md`.
+A deterministic pipeline using `SequentialAgent`: two sub-agents run in a fixed order defined in code (researcher then summarizer), not decided by an LLM. See `src/tutorials/t03_sequential_agent/README.md`.
 
-### 4. Remote A2A Agents
+### 4. Multi-Agent (Local)
 
-Three remote agents communicating via the A2A protocol, each with its own agent card and HTTP server. See `src/tutorials/remote_a2a/README.md`.
+A supervisor agent orchestrating two local sub-agents (dice roller + stats calculator) using `AgentTool`. See `src/tutorials/t04_multi_agent/README.md`.
 
-### 5. Sequential Workflow Agent
+### 5. ADK Agent with MCP Tool
 
-A deterministic pipeline using `SequentialAgent`: two sub-agents run in a fixed order defined in code (researcher then summarizer), not decided by an LLM. See `src/tutorials/sequential_agent/README.md`.
+A step-by-step MCP tutorial: run a separate notes MCP server and connect to it from both a standalone client and an ADK agent. See `src/tutorials/t05_mcp_agent/README.md`.
 
-### 6. Agent Evaluations with DeepEval
+### 6. Remote A2A Agents
 
-Evaluate the multi-agent supervisor with a golden dataset and DeepEval metrics. See `src/tutorials/evaluations/README.md`.
+Three remote agents communicating via the A2A protocol, each with its own agent card and HTTP server. See `src/tutorials/t06_remote_a2a/README.md`.
+
+### 7. Agent Evaluations with DeepEval
+
+Evaluate the multi-agent supervisor with a golden dataset and DeepEval metrics. See `src/tutorials/t07_evaluations/README.md`.
 
 Install eval dependencies:
 
 ```bash
 uv sync --extra adk --extra eval
-uv run pytest src/tutorials/evaluations/ -v
+uv run pytest src/tutorials/t07_evaluations/ -v
 ```
 
-### 7. Deploy ADK Agent to GCP
+### 8. Deploy ADK Agent to GCP
 
-Deploy a self-contained dice agent to Cloud Run and Vertex AI Agent Engine using `adk deploy`. See `src/tutorials/deploy_gcp/README.md`.
+Deploy a self-contained dice agent to Cloud Run and Vertex AI Agent Engine using `adk deploy`. See `src/tutorials/t08_deploy_gcp/README.md`.
 
 ## Notebooks
 

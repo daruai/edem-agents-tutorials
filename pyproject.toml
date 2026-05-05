@@ -36,7 +36,7 @@ packages = ["src/tutorials"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
-testpaths = ["src/tutorials/evaluations"]
+testpaths = ["src/tutorials/t07_evaluations"]
 
 [tool.uv]
 dev-dependencies = [

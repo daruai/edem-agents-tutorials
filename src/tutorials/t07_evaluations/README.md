@@ -64,13 +64,13 @@ The judge model reads the same provider env vars as the agent itself (`MODEL_PRO
 ## Run
 
 ```bash
-uv run pytest src/tutorials/evaluations/ -v
+uv run pytest src/tutorials/t07_evaluations/ -v
 ```
 
 Run a single metric:
 
 ```bash
-uv run pytest src/tutorials/evaluations/test_evals.py::test_task_completion -v
+uv run pytest src/tutorials/t07_evaluations/test_evals.py::test_task_completion -v
 ```
 
 ## How it works

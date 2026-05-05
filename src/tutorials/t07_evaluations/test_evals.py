@@ -19,9 +19,9 @@ from deepeval.metrics import (
 )
 from deepeval.test_case import LLMTestCase, LLMTestCaseParams
 
-from tutorials.evaluations.agent_runner import AgentTrace, run_agent
-from tutorials.evaluations.dataset import dataset
-from tutorials.evaluations.judge_model import get_judge_model
+from tutorials.t07_evaluations.agent_runner import AgentTrace, run_agent
+from tutorials.t07_evaluations.dataset import dataset
+from tutorials.t07_evaluations.judge_model import get_judge_model
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────

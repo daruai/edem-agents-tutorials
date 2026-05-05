@@ -57,7 +57,7 @@ export VERTEX_MODEL="gemini-2.5-flash-lite"
 ## Run
 
 ```bash
-uv run adk web src/tutorials/sequential_agent
+uv run adk web src/tutorials/t03_sequential_agent
 ```
 
 Open [http://localhost:8000](http://localhost:8000), pick **pipeline**, and try:

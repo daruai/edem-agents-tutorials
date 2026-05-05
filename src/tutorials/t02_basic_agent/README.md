@@ -48,7 +48,7 @@ export VERTEX_MODEL="gemini-2.5-flash-lite"
 ## Run
 
 ```bash
-uv run adk web src/tutorials/basic_agent
+uv run adk web src/tutorials/t02_basic_agent
 ```
 
 Open http://localhost:8000, pick **roll_die**, and try:

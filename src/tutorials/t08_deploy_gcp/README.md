@@ -95,7 +95,7 @@ The agent sets `GOOGLE_GENAI_USE_VERTEXAI=True` in code, so ADK uses Vertex AI i
 Run the agent locally before deploying:
 
 ```bash
-uv run adk web src/tutorials/deploy_gcp
+uv run adk web src/tutorials/t08_deploy_gcp
 ```
 
 Open [http://localhost:8000](http://localhost:8000), pick **roll_die**, and try:
@@ -114,7 +114,7 @@ uv run adk deploy cloud_run \
   --service_name=roll-die-agent \
   --app_name=roll_die \
   --with_ui \
-  src/tutorials/deploy_gcp/roll_die
+  src/tutorials/t08_deploy_gcp/roll_die
 ```
 
 The command prints the Cloud Run service URL when deployment finishes. Open that URL in your browser to use the ADK web UI that was included with `--with_ui`.
@@ -149,7 +149,7 @@ uv run adk deploy agent_engine \
   --staging_bucket=$STAGING_BUCKET \
   --display_name="roll-die-agent" \
   --trace_to_cloud \
-  src/tutorials/deploy_gcp/roll_die
+  src/tutorials/t08_deploy_gcp/roll_die
 ```
 
 The command prints the Agent Engine resource name. Save it:
