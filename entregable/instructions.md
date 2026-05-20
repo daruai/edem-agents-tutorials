@@ -1,4 +1,4 @@
-# Trabajo final: sistema multiagente con herramientas MCP y datos fundamentados
+# Trabajo final: sistema multiagente con herramientas MCP y grounding con datos
 
 ## 1. Visión general
 
