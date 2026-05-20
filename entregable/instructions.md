@@ -63,7 +63,7 @@ Tu sistema **debe** incluir:
    trivial del tutorial).
 4. **Al menos una fuente de datos fundamentada** elegida de §3.2.
 5. Un **punto de entrada de conversación** claro, ejecutable con un solo
-   comando (por ejemplo `uv run adk web src/<tu_paquete>`), que un docente
+   comando (por ejemplo `uv run adk web src/<tu_paquete>`), que el profesor
    pueda arrancar en menos de 5 minutos siguiendo tu README.
 
 ### 3.2 Fuente de datos — elige una (o combina dos para el bonus)
@@ -128,7 +128,7 @@ Tu solución **debe**:
 - Usar **uv** para la gestión de dependencias.
 - Usar el **Google ADK** para la capa de agentes (la misma librería de los
   tutoriales).
-- Usar la configuración compartida `MODEL_PROVIDER` para que un docente
+- Usar la configuración compartida `MODEL_PROVIDER` para que el profesor
   pueda ejecutar tu proyecto con Gemini, Groq o Vertex AI editando `.env`.
 - Mantener todos los secretos fuera de git. Proporciona un
   **`.env.example`** con valores de ejemplo.
@@ -143,8 +143,8 @@ favorito, etc.) siempre que justifiques la elección en el informe.
 Tienes libertad para elegir tu propio dominio. Algunos escenarios que
 pueden inspirarte:
 
-- **Asistente universitario** — RAG sobre el reglamento académico de tu
-  universidad + herramienta MCP que reserve una tutoría en una base de
+- **Asistente universitario** — RAG sobre el material académico de tu
+  universidad + herramienta MCP que reserve tutorías en una base de
   datos SQLite local.
 - **Copiloto de DevOps** — RAG sobre un PDF de runbooks + herramienta MCP
   que lea métricas de un "almacén de métricas" en CSV/SQLite + sub‑agente
@@ -187,6 +187,8 @@ Cada bonus suma crédito extra (ver §8). Puedes combinar varios.
 - **Dos fuentes fundamentadas** — Combina RAG **y** BigQuery en el mismo
   sistema. El supervisor debe escoger la fuente correcta para cada
   consulta.
+- **CI/CD** — Añade un pipeline de CI/CD que automatice la compilación, 
+  pruebas y despliegue de tu proyecto.
 
 ---
 
@@ -201,7 +203,7 @@ Entrega un enlace a un repositorio público de Git con esta estructura:
 ├── README.md              # Cómo instalar y ejecutar tu proyecto
 ├── pyproject.toml         # Proyecto uv con tus dependencias
 ├── uv.lock
-├── .env.example           # Todas las variables de entorno que el docente debe rellenar
+├── .env.example           # Todas las variables de entorno que el profesor debe rellenar
 ├── src/
 │   └── <tu_paquete>/
 │       ├── supervisor/    # Agente supervisor
@@ -221,13 +223,15 @@ El README debe contener:
 - Cualquier requisito previo (autenticación de gcloud, dataset de
   BigQuery, bucket de GCS…).
 
-### 6.2 Informe en PDF (`report.pdf`)
+**En el caso de estar desplegado en cloud, añade el enlace a la URL del agente.**
+
+### 6.2 Informe en PDF
 
 Un documento de **6–12 páginas** que incluya:
 
-1. **Portada** — título, tu nombre, grupo / clase, fecha.
+1. **Portada** — título, nombres del grupo y fecha.
 2. **Escenario** — qué problema resuelve tu sistema y para quién.
-3. **Diagrama de arquitectura** — un único diagrama claro que muestre:
+3. **Diagrama de arquitectura** — diagramas claro que muestre:
    - El supervisor y sus sub‑agentes.
    - El o los servidores MCP y sus herramientas.
    - La fuente de datos (almacén RAG, bucket de GCS, dataset de
@@ -260,7 +264,6 @@ Un documento de **6–12 páginas** que incluya:
    concretas (coste, latencia, alucinaciones en consultas fuera de
    alcance, prompt injection en las herramientas MCP…) y cómo abordarías
    cada una.
-9. **Referencias** — enlaces a la documentación, datasets y librerías
-   que has usado.
 
+Entrega en el siguiente correo electrónico: <danielruizriquelme@gmail.com>
 ---
