@@ -199,7 +199,7 @@ Cada bonus suma crédito extra (ver §8). Puedes combinar varios.
 Entrega un enlace a un repositorio público de Git con esta estructura:
 
 ```text
-<tu-nombre>-trabajo-final/
+<nombre-repositorio>/
 ├── README.md              # Cómo instalar y ejecutar tu proyecto
 ├── pyproject.toml         # Proyecto uv con tus dependencias
 ├── uv.lock
