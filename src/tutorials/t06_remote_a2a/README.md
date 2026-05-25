@@ -50,10 +50,9 @@ export VERTEX_MODEL="gemini-2.5-flash-lite"
 Start all three agents, then the UI:
 
 ```bash
-export PYTHONPATH=src
-uv run uvicorn tutorials.t06_remote_a2a.roll_die.agent:a2a_app --host localhost --port 8001 & \
-uv run uvicorn tutorials.t06_remote_a2a.stats.agent:a2a_app --host localhost --port 8002 & \
-uv run uvicorn tutorials.t06_remote_a2a.supervisor.agent:a2a_app --host localhost --port 8003 &
+uv run uvicorn src.tutorials.t06_remote_a2a.roll_die.agent:a2a_app --host localhost --port 8001 & \
+uv run uvicorn src.tutorials.t06_remote_a2a.stats.agent:a2a_app --host localhost --port 8002 & \
+uv run uvicorn src.tutorials.t06_remote_a2a.supervisor.agent:a2a_app --host localhost --port 8003 &
 ```
 
 ```bash

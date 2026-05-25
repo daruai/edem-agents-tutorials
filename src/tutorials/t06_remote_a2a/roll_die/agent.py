@@ -1,17 +1,33 @@
 """Remote agent exposed via A2A: rolls a die."""
 
+import os
 import random
+import sys
+from pathlib import Path
 
 from a2a.types import AgentCapabilities, AgentCard, AgentSkill
 from google.adk import Agent
 from google.adk.a2a.utils.agent_to_a2a import to_a2a
 
+REPO_ROOT = Path(__file__).resolve().parents[4]
+
+
+def _load_env_file() -> None:
+    env_file = REPO_ROOT / ".env"
+    if not env_file.exists():
+        return
+    for line in env_file.read_text().splitlines():
+        line = line.strip()
+        if "=" in line and not line.startswith("#"):
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+
+_load_env_file()
+
 try:
     from tutorials.model_config import get_model
 except ModuleNotFoundError:
-    from pathlib import Path
-    import sys
-
     tutorials_dir = Path(__file__).resolve().parents[2]
     sys.path.insert(0, str(tutorials_dir))
     from model_config import get_model
